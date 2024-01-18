@@ -1,11 +1,9 @@
-import "./App.css";
+import Login from "./Login/Login";
 
 function App() {
   return (
     <>
-      <div className="main">
-        <p>This is the Frontend</p>
-      </div>
+      <Login />
     </>
   );
 }
