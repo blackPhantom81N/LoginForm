@@ -1,8 +1,13 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 import { Button, Typography } from "@mui/material";
+import {useForm} from "react-hook-form"
 
 const Login = () => {
+  const {register, handleSubmit, watch, formState : {errors}} = useForm();
+
+  const onSubmit = (data) => console.log("This is data",data)
+
   return (
     <div
       style={{
@@ -23,7 +28,7 @@ const Login = () => {
         }}
       >
         {/* //TODO: Integrate react-hook-form to the Login Page */}
-        <form onSubmit={() => {}}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           {/* Email Field */}
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
             <Typography
